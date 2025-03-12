@@ -36,3 +36,11 @@ else:
     print("O número é ímpar")
 print("valor")
 
+peso = float(input("Digite o peso do pacote em kg: "))
+if peso <= 5:
+    frete = 10.00
+elif peso <= 10:
+    frete = 20.00
+else:
+    frete = 30.00
+print(f"O valor do frete para um pacote de {peso} kg é R$ {frete:.2f}")
