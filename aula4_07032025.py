@@ -1,6 +1,3 @@
-
-
-
 nome = 'joão'
 idade = 25
 print(nome,idade)
