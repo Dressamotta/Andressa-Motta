@@ -32,11 +32,62 @@ console.log(matrizSoma);
 
 //2.Transposição de Matriz: Escreva uma função que receba uma matriz 3x3 e retorne sua transposta (troque linhas por colunas).
 
+function transporMatriz(matriz) {
+    let transposta = [];
 
+    for (let i = 0; i < 3; i++) {
+        transposta[i] = [];
+        for (let j = 0; j < 3; j++) {
+            transposta[i][j] = matriz[j][i];
+        }
+    }
+
+    return transposta;
+}
+
+// Exemplo de uso:
+let matrizOriginal = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+];
+
+let matrizTransposta = transporMatriz(matrizOriginal);
+
+console.log("Matriz Original:");
+console.log(matrizOriginal);
+console.log("Matriz Transposta:");
+console.log(matrizTransposta);
 
 //3.Multiplicação de Matrizes: Crie duas matrizes 2x2 e escreva uma função para multiplicá-las.
 
+function multiplicarMatrizes(matrizA, matrizB) {
+    let resultado = [[0, 0], [0, 0]]; // Matriz 2x2 inicializada com zeros
 
+    for (let i = 0; i < 2; i++) {
+        for (let j = 0; j < 2; j++) {
+            resultado[i][j] = matrizA[i][0] * matrizB[0][j] + matrizA[i][1] * matrizB[1][j];
+        }
+    }
+
+    return resultado;
+}
+
+// Exemplo de uso:
+let matriz1 = [
+    [1, 2],
+    [3, 4]
+];
+
+let matriz2 = [
+    [5, 6],
+    [7, 8]
+];
+
+let matrizResultado = multiplicarMatrizes(matriz1, matriz2);
+
+console.log("Matriz Resultante:");
+console.log(matrizResultado);
 
 //4.Jogo da Velha: Implemente um jogo da velha usando uma matriz 3x3. O programa deve permitir que dois jogadores façam jogadas alternadas e verifique se há um vencedor.
 
