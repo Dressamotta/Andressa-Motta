@@ -1,7 +1,3 @@
-/////////////////////////////////////////////////////
-//   VETORES/ARRAYS em JavaScript - Aula 9         //
-/////////////////////////////////////////////////////
-
 // Arrays em JavaScript são estruturas de dados que permitem armazenar MÚLTIPLOS VALORES em uma única variável.
 
 // Exemplo:
