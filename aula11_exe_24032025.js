@@ -3,47 +3,49 @@
 //Cliente (nome, endereço, carrinho) e Pedido (itens, total, status).
 //Implemente métodos para adicionar ao carrinho, finalizar compra e calcular frete.
 
-//class produto {
-    constructor(nome, preço, estoque) {
+// Classe Produto
+class Produto {
+    constructor(nome, preco, estoque) {
         this.nome = nome;              
-        this.preço = preço;          
+        this.preco = preco;          
         this.estoque = estoque;      
-
     }
+}
 
-//class Cliente {
+// Classe Cliente
+class Cliente {
     constructor(nome, endereco) {
         this.nome = nome;
         this.endereco = endereco;
         this.carrinho = [];
     }
-    
-    adicionarAOCarrinho(produto,quantidade) {
-       if (produto.estoque >= quantidade)
-        this.carrinho.push({ produto, quantidade });
-       produto.estoque -= quantidade;
-       console.log(`${quantidade}x ${produto.nome} adicionado ao carrinho.`);
-   } else {
-       console.log(`Estoque insuficiente para ${produto.nome}.`);
-   }
-}
-    
-finalizarCompra() {
-    if (this.carrinho.length === 0) {
-        console.log("Carrinho vazio! Adicione itens antes de comprar.");
-        return null;
+
+    adicionarAoCarrinho(produto, quantidade) {
+        if (produto.estoque >= quantidade) {
+            this.carrinho.push({ produto, quantidade });
+            produto.estoque -= quantidade;
+            console.log(`${quantidade}x ${produto.nome} adicionado ao carrinho.`);
+        } else {
+            console.log(`Estoque insuficiente para ${produto.nome}.`);
+        }
     }
 
-    let total = 0;
-    this.carrinho.forEach(item => {
-        total += item.produto.preco * item.quantidade;
-    });
+    finalizarCompra() {
+        if (this.carrinho.length === 0) {
+            console.log("Carrinho vazio! Adicione itens antes de comprar.");
+            return null;
+        }
 
-    let pedido = new Pedido(this.carrinho, total);
-    this.carrinho = []; // Esvazia o carrinho
-    console.log(`Compra finalizada! Total: R$${total.toFixed(2)}`);
-    return pedido;
-}
+        let total = 0;
+        this.carrinho.forEach(item => {
+            total += item.produto.preco * item.quantidade;
+        });
+
+        let pedido = new Pedido(this.carrinho, total);
+        this.carrinho = []; // Esvazia o carrinho
+        console.log(`Compra finalizada! Total: R$${total.toFixed(2)}`);
+        return pedido;
+    }
 }
 
 // Classe Pedido
