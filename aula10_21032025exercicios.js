@@ -83,7 +83,30 @@ console.log(multiplicarMatrizes(matriz1, matriz2));
 
 //4.Jogo da Velha: Implemente um jogo da velha usando uma matriz 3x3. O programa deve permitir que dois jogadores façam jogadas alternadas e verifique se há um vencedor.
 
+let board = [
+    [' ', ' ', ' '],
+    [' ', ' ', ' '],
+    [' ', ' ', ' ']
+  ];
+  
+  
+  function printBoard() {
+    console.log(board[0].join(' | '));
+    console.log('---------');
+    console.log(board[1].join(' | '));
+    console.log('---------');
+    console.log(board[2].join(' | '));
+  }
+  
+  
+  board[0][0] = 'X'; 
+  board[1][1] = 'O'; 
+  board[0][1] = 'X'; 
+  board[1][2] = 'O'; 
+  board[0][2] = 'X'; 
+  
 
+  printBoard();
 
 //5.Busca em Matriz: Escreva uma função que receba uma matriz e um número, e retorne a posição (linha e coluna) desse número na matriz. Se o número não estiver na matriz, retorne null.
 
